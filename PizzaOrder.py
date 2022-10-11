@@ -37,13 +37,13 @@ class Pizza:
         self.pepperoni_check = tkinter.Checkbutton(self.bottomframe, text="Pepperoni", variable=self.pepperoni_var)
         self.pepperoni_check.pack()
  
-        self.sausage_var = tkinter.IntVar()
-        self.sausage_check = tkinter.Checkbutton(self.bottomframe, text="Sausage", variable=self.sausage_var)
-        self.sausage_check.pack()
+        self.olives_var = tkinter.IntVar()
+        self.olives_check = tkinter.Checkbutton(self.bottomframe, text="Olives", variable=self.olives_var)
+        self.olives_check.pack()
  
-        self.mushrooms_var = tkinter.IntVar()
-        self.mushrooms_check = tkinter.Checkbutton(self.bottomframe, text="Mushrooms", variable=self.mushrooms_var)
-        self.mushrooms_check.pack()
+        self.pineapple_var = tkinter.IntVar()
+        self.pineapple_check = tkinter.Checkbutton(self.bottomframe, text="Pineapple", variable=self.pineapple_var)
+        self.pineapple_check.pack()
  
         self.calculate_button = tkinter.Button(self.bottomframe, text="Calculate", command=self.price)
         self.calculate_button.pack()
@@ -60,8 +60,8 @@ class Pizza:
         name = self.name_entry.get()
         crust = self.crust_var.get()
         pepperoni = self.pepperoni_var.get()
-        sausage = self.sausage_var.get()
-        mushrooms = self.mushrooms_var.get()
+        olives = self.olives_var.get()
+        pineapple = self.pineapple_var.get()
  
         total = 0
         if crust == "Thin":
@@ -73,9 +73,9 @@ class Pizza:
  
         if pepperoni == 1:
             total += 2
-        if sausage == 1:
-            total += 2.5
-        if mushrooms == 1:
+        if pineapple == 1:
+            total += 1
+        if olives == 1:
             total += 1
  
         tkinter.messagebox.showinfo("Total", "Total: $" + str(total) + "\nName: " + name)
